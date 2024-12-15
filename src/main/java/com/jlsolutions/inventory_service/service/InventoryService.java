@@ -18,6 +18,10 @@ public class InventoryService {
 		return repository.findByProductId(productId);
 	}
 
+	public InventoryItem createInventoryItem(InventoryItem newItem) {
+		return repository.save(newItem);
+	}
+
 	public InventoryItem updateInventoryItem(String productId, int newQuantity) {
 		InventoryItem item = repository.findByProductId(productId);
 		if (item != null) {
